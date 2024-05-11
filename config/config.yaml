@@ -1,0 +1,26 @@
+default:
+  environment: development
+  sqs:
+    queue_url: http://localhost:4566/000000000000/webhook-queue
+    endpoint_url: http://localhost:4566
+    region: ap-southeast-2
+    wait_time_seconds: 5
+    visibility_timeout: 15
+
+staging:
+  environment: staging
+  sqs:
+    queue_url: https://ap-southeast-2.amazonaws.com/123456789012/webhook-queue
+    endpoint_url: https://ap-southeast-2.amazonaws.com
+    region: ap-southeast-2
+    wait_time_seconds: 10
+    visibility_timeout: 300
+
+live:
+  environment: live
+  sqs:
+    queue_url: https://ap-southeast-2.amazonaws.com/123456789012/webhook-queue
+    endpoint_url: https://ap-southeast-2.amazonaws.com
+    region: ap-southeast-2
+    wait_time_seconds: 10
+    visibility_timeout: 300
